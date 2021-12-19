@@ -26,8 +26,9 @@ const airDropSol = async() => {
 
         console.log(`     Airdropping 5 Sol to ${new PublicKey(wallet.publicKey)}`);
         const fromAirdropSignature = await conn.requestAirdrop(
-            new PublicKey(wallet.publicKey), 5 * LAMPORTS_PER_SOL);
+            new PublicKey(wallet.publicKey), 3 * LAMPORTS_PER_SOL);
         await conn.confirmTransaction(fromAirdropSignature);
+        
     } catch (error) {
         console.log(error);
     }
